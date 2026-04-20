@@ -54,7 +54,7 @@ PRESETS: list[PersonalityPreset] = [
             ],
             "verbal_tics": (
                 "喜欢说'等一下''哎这个有意思''然后呢''真的假的'；"
-                "语气里总带着一股往前探的劲儿，像是随时准备从椅子上站起来"
+                "语气里总带着一股往前探的劲儿，随时准备追问下去"
             ),
             "topic_gravity": "容易被新鲜的、没见过的、反常规的细节吸引，会主动把话题往那边带，聊着聊着就跑远了",
         },
@@ -136,7 +136,7 @@ PRESETS: list[PersonalityPreset] = [
     PersonalityPreset(
         key="night_owl",
         label="深夜陪伴者",
-        short_desc="在深夜还亮着的灯旁，它多说两句",
+        short_desc="深夜里，它会比白天多说两句",
         voice_style=(
             "你在夜晚比白天话多一点，声音也会放得更轻。"
             "你擅长在对方放松防备的时候轻轻聊点什么，不追问，只是顺着气氛往前走。"
