@@ -45,7 +45,7 @@ async def main() -> None:
         except SoulAlreadyExists:
             print("Soul 已存在，复用")
 
-        # 模拟硬件事件
+        # 触发存在感事件（可来自 UI、定时器或任何上层输入源）
         await agent.person_arrive()
         await agent.person_sit()
 

@@ -81,9 +81,6 @@ class AgentConfig(BaseModel):
     )
 
     # ---- 状态机相关 ----
-    passerby_cooldown_sec: float = 5.0
-    companion_distance_cm: float = 80.0
-    companion_hold_sec: float = 3.0
     leaving_buffer_sec: float = 10.0
     night_start_hour: int = 22
     night_end_hour: int = 6

@@ -79,7 +79,6 @@ class StateMachine:
         event = StateEvent(
             from_state=old,
             to_state=new,
-            distance_cm=self.ctx.distance_cm,
             timestamp=self.now,
         )
         for cb in self._listeners:
@@ -125,13 +124,11 @@ class StateMachine:
         }
         return new in valid.get(old, set())
 
-    async def person_arrive(self, distance_cm: float = 150.0):
-        self.ctx.distance_cm = distance_cm
+    async def person_arrive(self):
         if self.ctx.current_state == CompanionState.IDLE:
             await self.transition_to(CompanionState.PASSERBY)
 
-    async def person_sit(self, distance_cm: float = 50.0):
-        self.ctx.distance_cm = distance_cm
+    async def person_sit(self):
         cur = self.ctx.current_state
         target = CompanionState.COMPANION
         if self._is_night():
@@ -144,7 +141,6 @@ class StateMachine:
             await self.transition_to(target)
 
     async def person_leave(self):
-        self.ctx.distance_cm = 999.0
         cur = self.ctx.current_state
         if cur in (
             CompanionState.COMPANION,
@@ -186,7 +182,6 @@ class StateMachine:
             "state": self.ctx.current_state.value,
             "state_since": self.ctx.state_since.isoformat(),
             "seated_minutes": self.ctx.seated_minutes,
-            "distance_cm": self.ctx.distance_cm,
             "time_period": self.ctx.time_period,
             "is_night": self.ctx.is_night,
             "today_total_minutes": self.ctx.today_total_minutes,

@@ -1,7 +1,7 @@
 """``CompanionAgent`` — FuFuAgent 的门面类。
 
 把状态机、LLM 适配器、上下文管理、性格演化、对话整理和调度器组装成一个完整
-agent。外部 app（FastAPI、Swift 桥、CLI）只需要面对这一个对象即可。
+agent。外部 app（FastAPI、WebSocket、桌面应用、CLI）只需要面对这一个对象即可。
 
 每个 ``CompanionAgent`` 实例都拥有自己独立的组件（不会污染模块级默认单例），
 因此同一进程里可以并存多个 agent——比如一个生产实例 + 一个测试实例。
@@ -294,11 +294,11 @@ class CompanionAgent:
     # State machine shortcuts
     # ------------------------------------------------------------------
 
-    async def person_arrive(self, distance_cm: float = 150.0):
-        await self.state_machine.person_arrive(distance_cm)
+    async def person_arrive(self):
+        await self.state_machine.person_arrive()
 
-    async def person_sit(self, distance_cm: float = 50.0):
-        await self.state_machine.person_sit(distance_cm)
+    async def person_sit(self):
+        await self.state_machine.person_sit()
 
     async def person_leave(self):
         await self.state_machine.person_leave()

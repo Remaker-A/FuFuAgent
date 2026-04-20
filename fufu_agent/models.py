@@ -108,7 +108,6 @@ class RealtimeContext(BaseModel):
     current_state: CompanionState = CompanionState.IDLE
     state_since: datetime = Field(default_factory=datetime.now)
     seated_minutes: int = 0
-    distance_cm: float = 999.0
     time_period: str = "morning"
     today_total_minutes: int = 0
     is_night: bool = False
@@ -120,7 +119,6 @@ class StateEvent(BaseModel):
     type: str = "state_change"
     from_state: CompanionState = CompanionState.IDLE
     to_state: CompanionState = CompanionState.IDLE
-    distance_cm: float = 0.0
     timestamp: datetime = Field(default_factory=datetime.now)
 
 

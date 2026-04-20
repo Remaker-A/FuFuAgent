@@ -1,7 +1,7 @@
 """Light-weight async event bus.
 
-替代原 backend 里直接 ``ws_manager.broadcast(...)`` 的耦合。Agent 内部只负责把事件
-publish 出去，至于要不要转发到 WebSocket / Swift 桥 / 日志，由使用者自己注册订阅者决定。
+Agent 内部只负责把事件 publish 出去，至于要不要转发到 WebSocket / 桌面应用 / 日志，
+由使用者自己注册订阅者决定。
 """
 
 from __future__ import annotations

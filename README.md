@@ -10,13 +10,13 @@
 
 ## 它是什么
 
-FuFuAgent 是一个**纯 Python 陪伴型 Agent 核心库**。
+FuFuAgent 是一个**纯 Python 陪伴型 Agent 核心库**，完全由软件驱动，不依赖任何物理传感器或硬件设备。
 
-它不依赖任何 Web 框架（无 FastAPI / WebSocket），可以被 Mac app、FastAPI 服务、CLI 工具或任意 Python 脚本直接嵌入使用。
+它不绑定任何 Web 框架（无 FastAPI / WebSocket 强依赖），可以被桌面应用、FastAPI 服务、CLI 工具或任意 Python 脚本直接嵌入使用。状态机的"到来 / 坐下 / 离开"等事件完全由上层调用方触发（UI 操作、定时任务、外部服务等皆可）。
 
 **核心能力：**
 
-- **6 态状态机** — 感知"人"的存在，在 `IDLE → PASSERBY → COMPANION / DEEP_NIGHT → FOCUS → LEAVING → IDLE` 之间自动流转
+- **6 态状态机** — 基于"存在感"抽象事件驱动，在 `IDLE → PASSERBY → COMPANION / DEEP_NIGHT → FOCUS → LEAVING → IDLE` 之间自动流转
 - **性格演化引擎** — 每次相处之后，性格参数会随对话内容悄悄偏移
 - **多级上下文（L0～L3）** — 从实时状态到灵魂底色，分层组装 Prompt
 - **对话整理（Digest）** — 定期把聊天记录提炼成关系快照和用户事实
@@ -88,7 +88,7 @@ async def main():
             bias=BiasType.ADVENTUROUS,
         ))
 
-        # 模拟传感器事件
+        # 触发存在感事件（可来自 UI、定时器或任何上层输入源）
         await agent.person_sit()
 
         # 多轮对话
@@ -177,7 +177,7 @@ agent = CompanionAgent(config=cfg)
 | `personality_update` | `version`, `params`, `natural_description`, `voice_style` | 性格演化完成 |
 | `soul_update` | `soul`（完整 dump） | Soul 数据更新 |
 
-把事件转发到 WebSocket / Swift Bridge：
+把事件转发到 WebSocket / 桌面应用 / 日志：
 
 ```python
 @agent.subscribe
