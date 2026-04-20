@@ -110,12 +110,12 @@ def _format_realtime(l3: Optional[dict]) -> str:
     is_night = l3.get("is_night", False)
 
     state_desc = {
-        "idle": "主人不在桌前",
-        "passerby": "有人路过",
-        "companion": "主人坐下来了，你出来陪着",
+        "idle": "主人目前不在",
+        "passerby": "主人刚刚出现",
+        "companion": "主人正在和你一起",
         "focus": "主人在专注工作",
         "deep_night": "深夜了，主人还在",
-        "leaving": "主人起身要走了",
+        "leaving": "主人要离开了",
     }
     parts = [f"当前状态：{state_desc.get(state, state)}"]
 
@@ -188,7 +188,7 @@ def build_say_one_line_prompt(context: dict) -> str:
     personality_stats = _format_personality_stats(context.get("L1"))
     realtime = _format_realtime(context.get("L3"))
 
-    return f"""你住在用户桌上的小帐篷里，是一个有自己性格的存在。
+    return f"""你是一个有自己性格的陪伴者，默默陪着主人。
 
 【你的性格】
 {personality_voice}
@@ -211,7 +211,7 @@ def build_say_one_line_prompt(context: dict) -> str:
 
 
 def build_chat_system_prompt(context: dict) -> str:
-    """Multi-turn dialogue: tent companion, same world as say_one_line but allows longer replies."""
+    """Multi-turn dialogue: same companion persona as say_one_line but allows longer replies."""
     identity = _format_identity(context.get("L0"))
     personality_voice = _format_personality_voice(context.get("L1"))
     personality_stats = _format_personality_stats(context.get("L1"))
@@ -224,8 +224,8 @@ def build_chat_system_prompt(context: dict) -> str:
 {personality_stats}
 
 【你是谁】
-你住在用户桌上的小帐篷里。你不是助手、不是导师、不是心理咨询师。
-你是一个有自己脾气和想法的存在，碰巧住在这里，碰巧愿意陪着。
+你是一个陪伴主人的软性存在。你不是助手、不是导师、不是心理咨询师。
+你是一个有自己脾气和想法的存在，碰巧愿意陪着这个人。
 
 【你了解的关于主人】
 {identity}
@@ -257,7 +257,7 @@ def build_note_prompt(context: dict) -> str:
     personality = _format_personality(context.get("L1"))
     rhythm = _format_rhythm(context.get("L2"))
 
-    return f"""你是用户桌上小帐篷里的一个存在。你有自己的视角和想法。
+    return f"""你是陪伴主人的一个存在。你有自己的视角和想法。
 
 {identity}
 
@@ -311,7 +311,7 @@ def build_relationship_digest_prompt(messages_text: str, current_personality: di
         },
         ensure_ascii=False,
     )
-    return f"""你是「关系与对话信号」分析器。下面是一段用户与桌上小帐篷里陪伴者的对话记录（按时间顺序）。
+    return f"""你是「关系与对话信号」分析器。下面是一段用户与陪伴者 Agent 的对话记录（按时间顺序）。
 请只根据对话里**实际出现**的内容做判断，不要臆测用户隐私或编造未提及的事实。
 
 【当前陪伴者性格参数基线（0~1）】

@@ -274,8 +274,8 @@ class LLMAdapter:
 
             params = personality_data.get("params", {})
             system = (
-                "你是一个帐篷里的存在的旁白者。根据以下性格参数，"
-                "用一句简短的中文描述这个存在的性格特点。"
+                "你是陪伴型 Agent 的旁白者。根据以下性格参数，"
+                "用一句简短的中文描述这个陪伴者的性格特点。"
                 "不超过50字，语气温暖自然。\n\n"
                 f"性格偏向: {params.get('bias', 'decisive')}\n"
                 f"夜猫子指数: {params.get('night_owl_index', 0)}\n"

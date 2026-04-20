@@ -1,4 +1,4 @@
-"""FuFuAgent — 帐篷里的陪伴型 Agent 核心库。
+"""FuFuAgent — 纯软件陪伴型 Agent 核心库。
 
 两种使用姿势：
 
@@ -16,7 +16,7 @@
         reply = await agent.chat("今天好累。")
         await agent.stop()
 
-2. 模块级默认单例（和旧 backend 用法保持一致）::
+2. 模块级默认单例（便于脚本 / REPL 快速试用）::
 
         from fufu_agent import (
             default_file_store,
@@ -25,7 +25,7 @@
             default_state_machine,
         )
 
-``default_*`` 单例共享同一份 ``default_config``，方便脚本 / 老代码直接迁移。
+``default_*`` 单例共享同一份 ``default_config``。
 """
 
 from __future__ import annotations
@@ -71,8 +71,6 @@ from .models import (
     RealtimeContext,
     Rhythm,
     RhythmPatterns,
-    RoomScene,
-    RoomState,
     Soul,
     SoulCreateRequest,
     StateEvent,
@@ -109,8 +107,6 @@ __all__ = [
     "RealtimeContext",
     "Rhythm",
     "RhythmPatterns",
-    "RoomScene",
-    "RoomState",
     "Soul",
     "SoulCreateRequest",
     "StateEvent",

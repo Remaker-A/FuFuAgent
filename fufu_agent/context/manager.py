@@ -63,9 +63,6 @@ class ContextManager:
     def for_personality_update(self) -> dict:
         return self.assemble([0, 1, 2])
 
-    def for_room(self) -> dict:
-        return self.assemble([1, 2])
-
 
 default_context_manager = ContextManager()
 

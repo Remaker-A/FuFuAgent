@@ -30,14 +30,6 @@ class BiasType(str, Enum):
     CUSTOM = "custom"
 
 
-class RoomScene(str, Enum):
-    TIDY = "tidy"
-    MESSY = "messy"
-    NIGHT = "night"
-    DUSTY = "dusty"
-    RECOVERING = "recovering"
-
-
 # ---------- L0 Soul ----------
 
 class Soul(BaseModel):
@@ -146,13 +138,6 @@ class FocusSession(BaseModel):
     started_at: Optional[datetime] = None
     duration_minutes: int = 25
     elapsed_minutes: int = 0
-
-
-# ---------- Room ----------
-
-class RoomState(BaseModel):
-    scene: RoomScene = RoomScene.TIDY
-    details: dict = Field(default_factory=dict)
 
 
 # ---------- API request/response ----------

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "fufu-agent"
 version = "0.1.0"
-description = "FuFuAgent — 帐篷里的陪伴型 Agent 核心库（状态机 + 性格演化 + LLM 对话）"
+description = "FuFuAgent — 纯软件陪伴型 Agent 核心库（状态机 + 性格演化 + LLM 对话）"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
