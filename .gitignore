@@ -1,0 +1,27 @@
+# 本地环境变量（包含 LLM API Key，不要提交）
+.env
+.env.local
+
+# Python 字节码
+__pycache__/
+*.pyc
+*.pyo
+
+# 虚拟环境
+.venv/
+venv/
+
+# 打包产物
+build/
+dist/
+*.egg-info/
+
+# 运行期数据（Soul/Personality/chat_history 等用户隐私）
+data/soul.json
+data/personality.json
+data/rhythm.json
+data/notes.json
+data/events.jsonl
+data/messages.jsonl
+data/chat_history.jsonl
+data/chat_digest_state.json

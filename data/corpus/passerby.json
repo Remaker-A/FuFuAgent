@@ -1,0 +1,6 @@
+[
+  {"condition": {}, "text": "嗯？"},
+  {"condition": {}, "text": "有人。"},
+  {"condition": {"time": "morning"}, "text": "早。"},
+  {"condition": {"time": "late_night"}, "text": "这么晚。"}
+]

@@ -1,0 +1,12 @@
+[
+  {"condition": {"time": "morning"}, "text": "早。"},
+  {"condition": {"time": "morning"}, "text": "来了啊。"},
+  {"condition": {"time": "noon"}, "text": "中午了。"},
+  {"condition": {"time": "afternoon"}, "text": "嗯，你在。"},
+  {"condition": {"time": "afternoon"}, "text": "下午好。"},
+  {"condition": {"time": "evening"}, "text": "还在忙。"},
+  {"condition": {"time": "evening"}, "text": "晚饭吃了吗。"},
+  {"condition": {}, "text": "水喝了吗。"},
+  {"condition": {}, "text": "嗯。"},
+  {"condition": {}, "text": "坐会儿。"}
+]

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fufu-agent"
+version = "0.1.0"
+description = "FuFuAgent — 帐篷里的陪伴型 Agent 核心库（状态机 + 性格演化 + LLM 对话）"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.3.0",
+    "httpx>=0.27.0",
+    "aiofiles>=24.1.0",
+    "python-dotenv>=1.0.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["fufu_agent*"]
+exclude = ["examples*", "data*"]
+
+[tool.setuptools.package-data]
+"fufu_agent" = ["py.typed"]

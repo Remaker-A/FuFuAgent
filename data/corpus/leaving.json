@@ -1,0 +1,8 @@
+[
+  {"condition": {"time": "late_night"}, "text": "去休息吧。"},
+  {"condition": {"time": "late_night"}, "text": "晚安。"},
+  {"condition": {"time": "evening"}, "text": "明天见。"},
+  {"condition": {"time": "afternoon"}, "text": "回来。"},
+  {"condition": {}, "text": "走好。"},
+  {"condition": {}, "text": "灯先不关。"}
+]
