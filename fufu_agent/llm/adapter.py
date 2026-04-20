@@ -192,7 +192,7 @@ class LLMAdapter:
 
         except Exception as e:
             logger.warning(f"LLM note generation failed: {e}")
-            return "有时候不做选择，也是一种选择。站在这里看着窗外，觉得不管怎样，天总会亮的。"
+            return "有时候不做选择，也是一种选择。慢慢想一会儿，觉得不管怎样，天总会亮的。"
 
     async def generate_personality_update(
         self, context: dict, events_summary: str

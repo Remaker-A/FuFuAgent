@@ -8,5 +8,5 @@
   {"condition": {"time": "evening"}, "text": "晚饭吃了吗。"},
   {"condition": {}, "text": "水喝了吗。"},
   {"condition": {}, "text": "嗯。"},
-  {"condition": {}, "text": "坐会儿。"}
+  {"condition": {}, "text": "歇会儿。"}
 ]

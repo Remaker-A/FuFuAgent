@@ -1,6 +1,6 @@
 [
   {"condition": {"time": "late_night"}, "text": "还在啊。"},
-  {"condition": {"time": "late_night"}, "text": "灯留着了。"},
+  {"condition": {"time": "late_night"}, "text": "我也醒着。"},
   {"condition": {"time": "late_night"}, "text": "夜深了。"},
   {"condition": {"time": "late_night"}, "text": "我也在。"},
   {"condition": {"time": "late_night"}, "text": "别太晚。"},

@@ -4,5 +4,5 @@
   {"condition": {"time": "evening"}, "text": "明天见。"},
   {"condition": {"time": "afternoon"}, "text": "回来。"},
   {"condition": {}, "text": "走好。"},
-  {"condition": {}, "text": "灯先不关。"}
+  {"condition": {}, "text": "慢走。"}
 ]
