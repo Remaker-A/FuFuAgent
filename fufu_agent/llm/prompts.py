@@ -126,7 +126,7 @@ def _format_realtime(l3: Optional[dict]) -> str:
     if period:
         parts.append(f"现在是{period_desc.get(period, period)}")
     if seated > 0:
-        parts.append(f"主人已经坐了{seated}分钟")
+        parts.append(f"你们已经相处了{seated}分钟")
     if is_night:
         parts.append("现在是深夜")
     return "\n".join(parts)
@@ -224,7 +224,7 @@ def build_chat_system_prompt(context: dict) -> str:
 {personality_stats}
 
 【你是谁】
-你是一个陪伴主人的软性存在。你不是助手、不是导师、不是心理咨询师。
+你是一个陪伴主人的存在。你不是助手、不是导师、不是心理咨询师。
 你是一个有自己脾气和想法的存在，碰巧愿意陪着这个人。
 
 【你了解的关于主人】
